@@ -23,12 +23,12 @@ function getPokemon(name){
     });
 }
 
-function postPokemon(shit) {
+function postPokemon(pokestuff) {
     $.ajax({
         type:"POST",
         url: "http://127.0.0.1:5000/update",
         //data: {'name': $("#poke-name").text(), 'height': $("#poke-height").text(), 'weight': $("#poke-weight").text()},  
-        data: shit,
+        data: pokestuff,
         contentType: "application/json; charset=utf-8",
         //data: JSON.stringify({'name': $("#poke-name").text(), 'height': $("#poke-height").text(), 'weight': $("#poke-weight").text()}),  
     });
@@ -39,9 +39,8 @@ $(document).ready(function(){
         testAPI();
     });
     $("#post-btn").click(function() {
-        shit = JSON.stringify({'name': $("#poke-name").text(), 'height': $("#poke-height").text(), 'weight': $("#poke-weight").text()});
-        console.log(shit);
-        postPokemon(shit);
+        pokestuff = JSON.stringify({'name': $("#poke-name").text(), 'height': $("#poke-height").text(), 'weight': $("#poke-weight").text()});
+        postPokemon(pokestuff);
     });
 
     $('form').submit(function(e){
