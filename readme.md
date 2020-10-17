@@ -12,6 +12,7 @@ windows: flask_venv/Scripts/activate
 linux: deactivate 
 
 #to run flask app, first export the environment variable so your terminal knows what it's executing or referencing 
+pip install -r requirements.txt
 linux: export FLASK_APP=<app name here>
 windows command line: set FLASK_APP=<app name here>
 windows powershell: $env:FLASK_APP = "hello.py"
