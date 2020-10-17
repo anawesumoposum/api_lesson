@@ -22,15 +22,13 @@ function getPokemon(name){
         }
     });
 }
-
+//this function sends the information to the Flask app
 function postPokemon(pokestuff) {
     $.ajax({
-        type:"POST",
-        url: "http://127.0.0.1:5000/update",
-        //data: {'name': $("#poke-name").text(), 'height': $("#poke-height").text(), 'weight': $("#poke-weight").text()},  
-        data: pokestuff,
+        type: //what kind of RESTful call do we want to make here?
+        url: //what route do we want to send it to?
+        data: //what data do we want to send?
         contentType: "application/json; charset=utf-8",
-        //data: JSON.stringify({'name': $("#poke-name").text(), 'height': $("#poke-height").text(), 'weight': $("#poke-weight").text()}),  
     });
 }
 
@@ -40,7 +38,7 @@ $(document).ready(function(){
     });
     $("#post-btn").click(function() {
         pokestuff = JSON.stringify({'name': $("#poke-name").text(), 'height': $("#poke-height").text(), 'weight': $("#poke-weight").text()});
-        postPokemon(pokestuff);
+        //let's call the function we just defined to send data to the Flask app
     });
 
     $('form').submit(function(e){

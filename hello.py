@@ -14,7 +14,7 @@ def stuff():
     return "Hello, World!"
 
 
-@app.route('/update', methods=['POST', 'GET'])
+@app.route('/update', methods=['POST', 'GET']) #why might we want both POST and GET?
 def moreStuff():
     if(request.method == 'POST'):
         try:
